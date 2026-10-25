@@ -1,0 +1,22 @@
+# 3D Gaussian splatting dependencies.
+#
+#   python -m venv .venv
+#   .venv\Scripts\python.exe -m pip install -r requirements.txt
+#   .venv\Scripts\python.exe run_pipeline.py
+#
+# Stage 1 lives in the sfm/ submodule and shares every dependency below except
+# torch, so one install covers both halves:
+#
+#   git submodule update --init --recursive
+
+numpy>=1.21
+torch>=2.0          # the Gaussians and the rasteriser; a CPU build is fine
+matplotlib>=3.4     # the training-summary figure (forced onto Agg)
+
+# Image loading and the PNG writers. Pinned below 5.0 to match the SfM stage,
+# whose notebooks use 4.x-era APIs.
+opencv-contrib-python>=4.5,<5
+
+# Stage 1 (sfm/) uses these: bundle adjustment, and the PLY/mesh writers.
+scipy>=1.7
+open3d>=0.15        # also what view_splat.py renders through

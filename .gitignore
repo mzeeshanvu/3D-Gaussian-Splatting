@@ -1,0 +1,26 @@
+# Generated results. Everything here is reproducible with
+# `python run_pipeline.py`, and a full run writes several hundred figures.
+output/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+
+# Node modules for tools/build_docs.js
+node_modules/
+package-lock.json
+
+# Input imagery lives in the sfm/ submodule, which ignores it there.
+Dataset/
